@@ -89,6 +89,10 @@ public:
   /// Returns a reference to the ObjLinkingLayer
   RTDyldObjectLinkingLayer2 &getObjLinkingLayer() { return ObjLinkingLayer; }
 
+  TargetMachine* getTargetMachine() const { return TM; }
+
+  const DataLayout& getDataLayout() const { return DL; }
+
 protected:
   LLJIT(std::unique_ptr<ExecutionSession> ES, std::unique_ptr<TargetMachine> TM,
         DataLayout DL);
